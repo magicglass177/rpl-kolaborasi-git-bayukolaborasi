@@ -28,6 +28,11 @@ def beranda():
 def bantuan():
     return render_template("bantuan.html")
 
+@app.route("/tentang")
+def tentang():
+    anggota = ["bayunandapamungkas", "nursintianabila"]
+    return render_template("tentang.html", anggota=anggota)
+
 if __name__ == "__main__":
     # Berjalan di localhost saja
     app.run(host="127.0.0.1", port=5000, debug=True)
