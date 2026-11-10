@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Halo Sampit</title>
+</head>
+<body>
+    <h1>Halo Bayu!</h1>
+        <p>{{ salam }}. Waktu server: {{ sekarang }}</p>
+
+    <!-- Formulir dikirim dengan metode POST ke halaman yang sama -->
+    <form method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" maxlength="50" required>
+        <button type="submit">Kirim</button>
+    </form>
+
+    <!-- {{ nama }} otomatis di-escape oleh Jinja2, jadi aman dari XSS -->
+    {% if nama %}
+        <h2>Halo, {{ nama }}!</h2>
+    {% endif %}
+</body>
+</html>
